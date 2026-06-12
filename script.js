@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxU17CoV7u_XsCpT3KAJpKLfzRdezSXcOFawtC-Ikmy4D4Csxn6IbQq4vQnY3_SDYrYaQ/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVOhLcrBC8Fn66Z9KeI6vihgwwQ2je547TrL-FBepRK5tV8o5neiOy7AFOiNmuluMqwg/exec";
 
 let examLocked = false;
 
