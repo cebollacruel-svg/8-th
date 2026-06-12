@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby2qTBUwWN5_zsBrGhslaw4asYc0EiY-TohO-DfRrU7aBFg42Zu0xmOkpT0yfmV5O6l/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxU17CoV7u_XsCpT3KAJpKLfzRdezSXcOFawtC-Ikmy4D4Csxn6IbQq4vQnY3_SDYrYaQ/exec";
 
 let examLocked = false;
 
@@ -323,6 +323,8 @@ function checkAnswers(event) {
     let score = 0;
     const total = 12;
     const detalleArray = [];
+    const correctList = [];
+    const wrongList = [];
 
     for (let n = 1; n <= total; n++) {
         const key = "q" + n;
@@ -333,20 +335,26 @@ function checkAnswers(event) {
 
         if (isCorrect) {
             score++;
+            correctList.push(`Q${n}`);
             detalleArray.push(`Q${n}: ${studentAnswer} \u2713`);
         } else {
+            wrongList.push(`Q${n}`);
             detalleArray.push(`Q${n}: ${studentAnswer} \u2717 (correct: ${correctAnswer})`);
         }
     }
 
-    const detalle = "[8th] " + detalleArray.join("  |  ");
+    const detalle = detalleArray.join("  |  ");
     const score100 = Math.round((score / total) * 100);
-    const examPercent = ((score / total) * 10).toFixed(1);
+    const examPercent = ((score / total) * 5).toFixed(1);   // exam is worth 5%
 
     guardarEnGoogleSheets({
         exam: "8th",
         nombre: studentName,
-        puntaje: `${score}/${total} points \u2014 ${score100} score \u2014 ${examPercent}/10 %`,
+        puntaje: `${score}/${total}`,
+        porcentaje: `${score100}%`,
+        nota5: `${examPercent}/5`,
+        correctas: correctList.join(", ") || "none",
+        incorrectas: wrongList.join(", ") || "none",
         detalle: detalle
     });
 
