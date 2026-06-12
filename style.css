@@ -686,11 +686,29 @@ form.locked .student-info input{opacity:.72;}
    ===================================================================== */
 .site-footer{
     text-align:center;
-    padding:36px 16px 46px;
-    font-size:12.5px;
-    font-weight:600;
-    letter-spacing:.04em;
-    color:var(--muted);
+    padding:38px 16px 52px;
+}
+.footer-brand{
+    display:inline-block;
+    margin:0;
+    font-size:13.5px;
+    font-weight:800;
+    letter-spacing:.07em;
+    background:linear-gradient(90deg, var(--aurora1), #d7f6ff, var(--aurora2), var(--aurora3), var(--aurora1));
+    background-size:300% 100%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    filter:drop-shadow(0 0 12px rgba(52,224,196,.55));
+    animation:brandFlow 6s linear infinite, brandBlink 1.4s ease-in-out infinite;
+}
+@keyframes brandFlow{
+    from{background-position:0% 50%;}
+    to{background-position:300% 50%;}
+}
+@keyframes brandBlink{
+    0%,100%{opacity:1;}
+    50%{opacity:.42;}
 }
 
 /* =====================================================================
