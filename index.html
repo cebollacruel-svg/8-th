@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listening Exam — 8th Grade · Colegio Nocturno de Cariari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Night sky background: auroras + stars + grid -->
+<div class="sky" aria-hidden="true">
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="stars"></div>
+    <div class="grid"></div>
+</div>
+
+<header class="hero">
+    <p class="hero-eyebrow">First Semester 2026 &middot; Listening Exam I</p>
+    <h1 class="hero-title">COLEGIO NOCTURNO<br>DE CARIARI</h1>
+    <p class="hero-sub">8th Graders &middot; English Listening</p>
+</header>
+
+<div class="progress-shell" role="status">
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    <span class="progress-text" id="progText">Answered 0/12</span>
+</div>
+
+<main class="wrapper">
+
+    <section class="card intro reveal" data-tilt>
+        <div class="meta-chips">
+            <span class="chip"><b>Teacher</b> Saiden Ortiz G&oacute;mez</span>
+            <span class="chip"><b>Total</b> 12 points (10%)</span>
+            <span class="chip"><b>Time</b> One lesson</span>
+        </div>
+        <p class="instructions">
+            This exam has <strong>4 audios</strong>. You will listen to each audio and answer
+            <strong>3 questions</strong> about it. Each audio can be played
+            <strong>up to 3 times only</strong>. Choose the correct answer for each question.
+        </p>
+        <div class="student-info">
+            <label for="studentName">Student's Name *</label>
+            <input type="text" id="studentName" placeholder="Write your full name" autocomplete="off">
+            <p class="name-error" id="nameError" hidden>Please write your full name before submitting.</p>
+        </div>
+    </section>
+
+    <form id="quizForm" novalidate>
+        <div id="questions-container"></div>
+
+        <div class="submit-wrap">
+            <button type="submit" class="submit-btn"><span>Submit Exam</span></button>
+        </div>
+
+        <div id="saveStatus" class="save-status"></div>
+    </form>
+
+</main>
+
+<footer class="site-footer">
+    Colegio Nocturno de Cariari &middot; Listening Exam I &middot; Teacher: Saiden Ortiz G&oacute;mez
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
